@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe - Classic Strategy Game</title>
+    <meta name="description" content="Play Tic Tac Toe against a friend or challenge the AI. Classic strategy game with modern design." />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="title">Tic Tac Toe</h1>
+        <p class="subtitle">Classic Strategy Game</p>
+      </header>
+
+      <div id="mode-selection" class="mode-selection">
+        <h2>Select Game Mode</h2>
+        <div class="mode-buttons">
+          <button id="single-player-btn" class="mode-btn" aria-label="Play against computer">
+            <div class="mode-icon">🤖</div>
+            <div class="mode-title">Single Player</div>
+            <div class="mode-desc">Play vs Computer</div>
+          </button>
+          <button id="two-player-btn" class="mode-btn" aria-label="Play with a friend">
+            <div class="mode-icon">👥</div>
+            <div class="mode-title">Two Player</div>
+            <div class="mode-desc">Play with a Friend</div>
+          </button>
+        </div>
+      </div>
+
+      <div id="game-container" class="game-container hidden">
+        <div class="game-info">
+          <div class="turn-indicator">
+            <span id="current-turn">Player X's Turn</span>
+          </div>
+          <button id="change-mode-btn" class="control-btn secondary-btn" aria-label="Change game mode">
+            Change Mode
+          </button>
+        </div>
+
+        <div class="board-wrapper">
+          <div id="game-board" class="game-board">
+            <div class="cell" data-index="0" role="button" aria-label="Cell 1"></div>
+            <div class="cell" data-index="1" role="button" aria-label="Cell 2"></div>
+            <div class="cell" data-index="2" role="button" aria-label="Cell 3"></div>
+            <div class="cell" data-index="3" role="button" aria-label="Cell 4"></div>
+            <div class="cell" data-index="4" role="button" aria-label="Cell 5"></div>
+            <div class="cell" data-index="5" role="button" aria-label="Cell 6"></div>
+            <div class="cell" data-index="6" role="button" aria-label="Cell 7"></div>
+            <div class="cell" data-index="7" role="button" aria-label="Cell 8"></div>
+            <div class="cell" data-index="8" role="button" aria-label="Cell 9"></div>
+          </div>
+          <svg class="winning-line" id="winning-line" viewBox="0 0 300 300">
+            <line x1="0" y1="0" x2="0" y2="0" stroke="#22c55e" stroke-width="8" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="game-controls">
+          <button id="restart-btn" class="control-btn" aria-label="Restart game">
+            Restart Game
+          </button>
+        </div>
+      </div>
+
+      <div id="result-modal" class="modal hidden">
+        <div class="modal-content">
+          <div id="result-icon" class="result-icon"></div>
+          <h2 id="result-message" class="result-message">Player X Wins!</h2>
+          <div class="modal-buttons">
+            <button id="play-again-btn" class="control-btn">Play Again</button>
+            <button id="back-to-menu-btn" class="control-btn secondary-btn">Back to Menu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/script.ts"></script>
+  </body>
+</html>
